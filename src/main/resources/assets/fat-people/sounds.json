@@ -1,0 +1,11 @@
+{
+  "suicide_forest_ambience": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "fat-people:suicide_forest_ambience",
+        "stream": true
+      }
+    ]
+  }
+}

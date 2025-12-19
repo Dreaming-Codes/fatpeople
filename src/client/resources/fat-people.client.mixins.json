@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "codes.dreaming.fatpeople.mixin.client",
+	"compatibilityLevel": "JAVA_17",
+	"client": [
+		"PlayerModelMixin",
+		"PlayerRendererMixin",
+		"CameraMixin",
+		"GuiMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

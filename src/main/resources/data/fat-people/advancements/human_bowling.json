@@ -1,0 +1,26 @@
+{
+  "parent": "fat-people:body_positive",
+  "display": {
+    "icon": {
+      "item": "minecraft:slime_ball"
+    },
+    "title": {
+      "translate": "advancement.fat-people.human_bowling.title"
+    },
+    "description": {
+      "translate": "advancement.fat-people.human_bowling.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "start_rolling": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    ["start_rolling"]
+  ]
+}

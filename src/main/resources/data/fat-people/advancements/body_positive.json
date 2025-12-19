@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": {
+      "item": "fat-people:prime_energy"
+    },
+    "title": {
+      "translate": "advancement.fat-people.body_positive.title"
+    },
+    "description": {
+      "translate": "advancement.fat-people.body_positive.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "drink_prime_energy": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "fat-people:prime_energy"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["drink_prime_energy"]
+  ]
+}

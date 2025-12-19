@@ -1,0 +1,33 @@
+{
+  "parent": "fat-people:body_positive",
+  "display": {
+    "icon": {
+      "item": "minecraft:oak_leaves"
+    },
+    "title": {
+      "translate": "advancement.fat-people.is_this_real.title"
+    },
+    "description": {
+      "translate": "advancement.fat-people.is_this_real.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "enter_suicide_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "biome": "fat-people:suicide_forest"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["enter_suicide_forest"]
+  ]
+}
