@@ -21,7 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.LightLayer;
 
 import java.util.Map;
-import java.util.concurrent.CompletableFuture;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class HangingBodyRenderer extends EntityRenderer<HangingBodyEntity> {
@@ -178,23 +178,20 @@ public class HangingBodyRenderer extends EntityRenderer<HangingBodyEntity> {
     private void loadSkinAsync(String username) {
         Minecraft minecraft = Minecraft.getInstance();
         
-        // Create an initial GameProfile with just the username
-        GameProfile profile = new GameProfile(null, username);
+        // Get UUID from the pre-defined map
+        String uuidStr = HangingBodyEntity.SKIN_UUIDS.get(username);
+        if (uuidStr == null) {
+            return;
+        }
         
-        // Fill the profile asynchronously to get the correct UUID and skin data
-        CompletableFuture.supplyAsync(() -> {
-            try {
-                return minecraft.getMinecraftSessionService().fillProfileProperties(profile, true);
-            } catch (Exception e) {
-                return profile;
+        UUID uuid = UUID.fromString(uuidStr);
+        GameProfile profile = new GameProfile(uuid, username);
+        
+        // Use Minecraft's skin manager to fetch the skin
+        minecraft.getSkinManager().registerSkins(profile, (type, location, texture) -> {
+            if (type == MinecraftProfileTexture.Type.SKIN) {
+                SKIN_CACHE.put(username, location);
             }
-        }).thenAccept(filledProfile -> {
-            // Use Minecraft's skin manager to fetch the skin with the filled profile
-            minecraft.getSkinManager().registerSkins(filledProfile, (type, location, texture) -> {
-                if (type == MinecraftProfileTexture.Type.SKIN) {
-                    SKIN_CACHE.put(username, location);
-                }
-            }, true);
-        });
+        }, true);
     }
 }

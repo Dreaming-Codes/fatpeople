@@ -81,6 +81,19 @@ public class FatPeople implements ModInitializer {
 	// Maximum chunks to process per tick to avoid lag spikes
 	private static final int MAX_CHUNKS_PER_TICK = 3;
 	
+	// Sound cooldown tracking (34 second sound duration in milliseconds)
+	private static final long AMBIENCE_SOUND_DURATION_MS = 35000L;
+	private static long lastAmbienceSoundTime = 0L;
+	
+	public static boolean canPlayAmbienceSound() {
+		long currentTime = System.currentTimeMillis();
+		return (currentTime - lastAmbienceSoundTime) >= AMBIENCE_SOUND_DURATION_MS;
+	}
+	
+	public static void markAmbienceSoundPlayed() {
+		lastAmbienceSoundTime = System.currentTimeMillis();
+	}
+	
 	private record PendingChunk(ServerLevel world, ChunkPos pos) {}
 
 	@Override
