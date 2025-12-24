@@ -3,15 +3,15 @@
 	"id": "fat-people",
 	"version": "${version}",
 	"name": "Fat People",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A dark, physics-driven mod that blends eerie exploration with chaotic movement. Harness Prime Energy, grow wider, and become an unstoppable rolling force of nature.",
 	"authors": [
-		"Me!"
+		"Dreaming Codes"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Dreaming-Codes/fatpeople",
+		"sources": "https://github.com/Dreaming-Codes/fatpeople"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/fat-people/icon.png",
 	"environment": "*",
 	"entrypoints": {
