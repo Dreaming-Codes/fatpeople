@@ -34,9 +34,9 @@ public class HangingBodyEntity extends Entity {
     
     public static final List<String> SKIN_USERNAMES = List.of(
         "MarcusKron", "DreamingCodes", "Brodino96", "FabioTobi_", "ArgoSeven",
-        "Kepp2", "Notch", "Capobastone", "BigBoss340", "JadexFire",
+        "Kepp2", "Notch", "Capobastone", "BigBoss340", "Jadexfire99",
         "DOMOLOCO", "Jade", "Ryo7nix", "Tvnaka", "Tia05",
-        "maryvern", "ziNSaNiTY_", "Pella97", "brimstone", "Player_GPT", "Puccilillo"
+        "maryvern", "ziNSaNiTY_", "Pella97", "Carlogamer_02", "Player_GPT", "Puccilillo"
     );
     
     public static final Map<String, String> SKIN_UUIDS = Map.ofEntries(
